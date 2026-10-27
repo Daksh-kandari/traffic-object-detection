@@ -1,0 +1,6 @@
+{
+  "name": "Traffic Object Detection",
+  "description": "YOLO-based detection, classification, localisation and tracking of road users and traffic objects with real-time analytics and evaluation.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

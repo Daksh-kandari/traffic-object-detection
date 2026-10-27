@@ -1,0 +1,32 @@
+# Model configuration (Appendix: Model Configuration)
+model:
+  weights: yolo11n.pt      # any Ultralytics YOLO weights, or your custom best.pt
+  imgsz: 640               # inference image size
+  conf: 0.35               # confidence threshold
+  iou: 0.45                # NMS IoU threshold
+  device: null             # null = auto, "cpu", "0" (GPU 0), "mps"
+  # Classes to keep, by name. Default weights are COCO-trained, which has
+  # "stop sign" but no general traffic-sign class; train on a traffic-sign
+  # dataset (see train.py) to detect more sign types.
+  classes: [car, motorcycle, bus, truck, person, bicycle, stop sign, traffic light]
+
+tracking:
+  enabled: true            # optional per the design: count, classify, track
+  tracker: bytetrack.yaml  # or botsort.yaml
+
+preprocess:
+  max_side: 1280           # downscale frames larger than this (keeps aspect ratio)
+  frame_stride: 1          # process every Nth frame (1 = all frames)
+  low_light_enhance: false # CLAHE on luminance, helps dim / low-contrast footage
+
+output:
+  save_video: true
+  show_window: false
+  out_dir: outputs
+
+# Training configuration (Appendix: dataset, epochs, batch size)
+train:
+  data: data/data.yaml
+  epochs: 50
+  batch: 16
+  imgsz: 640

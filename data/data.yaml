@@ -1,0 +1,13 @@
+# Dataset template for custom training (Appendix: Dataset).
+# Replace the path and class names with your verified dataset.
+path: data/traffic          # dataset root
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: car
+  1: motorcycle
+  2: bus
+  3: truck
+  4: pedestrian
+  5: traffic_sign
